@@ -1,4 +1,4 @@
-import { authService, signInWithEmailAndPasswordService, createUserWithEmailAndPasswordService, firebaseInstance } from "fbase";
+import { authService, signInWithEmailAndPasswordService, createUserWithEmailAndPasswordService } from "fbase";
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import React, { useState } from "react";
 
@@ -9,7 +9,7 @@ const Auth = () => {
     const [error, setError] = useState("");
     const onChange = (event) => {
         const {target: {name, value}} = event;
-        if (name == "email") {
+        if (name === "email") {
             setEmail(value)
         } else if (name === "password") {
             setPassword(value)
